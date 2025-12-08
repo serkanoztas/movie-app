@@ -5,7 +5,7 @@ const initialState = {
     selectedMovie: {},
 }
 
-const apiKey = "ead4cc6603bccad87b13ec04b6c308d9";
+const apiKey = import.meta.env.VITE_MOVIE_API_KEY;
 
 export const getAllMovies = createAsyncThunk("getAllMovies", async () => {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&sort_by=release_date.desc&page=1`);
